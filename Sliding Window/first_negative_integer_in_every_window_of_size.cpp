@@ -1,17 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define endl "\n"
-#define YES cout << "YES" << endl
-#define NO cout << "NO" << endl
-#define yes cout << "Yes" << endl
-#define no cout << "No" << endl
-#define fill_number(x, n) setfill('0') << setw(n) << (x)
-#define precision_number(x, n) fixed << setprecision(n) << (x)
-template <typename T>
-T lcm(T a, T b)
-{
-    return (a * (b / __gcd(a, b)));
-}
 
 int main()
 {
