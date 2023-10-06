@@ -15,6 +15,7 @@ int main()
     {
         cin >> Arr[i];
     }
+    /* finding the maximum sum of a subarray of length K in an array. */
     long long i = 0, j = 0, s = 0;
     long long mx = LLONG_MIN;
     while (j < N)
@@ -26,6 +27,7 @@ int main()
             s -= Arr[i];
             i++;
         }
+        cout << s << endl;
         j++;
     }
     cout << mx << endl;
