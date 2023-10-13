@@ -15,8 +15,8 @@ int main()
     {
         cin >> A[i];
     }
-/* implementing a sliding window technique to find the first negative integer in each
-window of size K in an array A. */
+    /* implementing a sliding window technique to find the first negative integer in each
+    window of size K in an array A. */
     long long i = 0, j = 0;
     queue<long long> q;
     while (j < N)
@@ -38,7 +38,6 @@ window of size K in an array A. */
 
     return 0;
 }
-
 
 /*
 8
