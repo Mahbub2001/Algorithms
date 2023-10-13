@@ -16,6 +16,7 @@ int main()
     map<int, int> mp;
     for (int i = 0; i < n; i++)
     {
+        /* The code `sum += a[i];` is adding the current element `a[i]` to the running sum `sum`. */
         sum += a[i];
         if (sum == s)
         {
