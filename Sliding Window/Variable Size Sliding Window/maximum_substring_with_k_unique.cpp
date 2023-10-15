@@ -9,7 +9,7 @@ int main()
     cin >> k;
     int i = 0, j = 0;
     int freq[26] = {0};
-    int unique = 0;
+    int unique = 0, mx = -1;
     while (j < n)
     {
         freq[s[j] - 'a']++;
@@ -29,10 +29,12 @@ int main()
         }
         if (unique == k)
         {
-            cout << j - i + 1 << endl;
+            // cout << j - i + 1 << endl;
+            mx = max(mx, j - i + 1);
         }
         j++;
     }
+    cout << mx << endl;
     return 0;
 }
 
