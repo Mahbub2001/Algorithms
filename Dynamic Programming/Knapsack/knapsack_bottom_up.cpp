@@ -5,7 +5,6 @@ int main()
 {
     int n, s;
     cin >> n >> s;
-
     int v[n + 1], w[n + 1];
 
     for(int i = 1; i <= n; i++)
@@ -15,7 +14,6 @@ int main()
     }
 
     int dp[n + 1][s + 1];
-
     for(int i = 0; i <= n; i++)
     {
         for(int j = 0; j <= s; j++)
