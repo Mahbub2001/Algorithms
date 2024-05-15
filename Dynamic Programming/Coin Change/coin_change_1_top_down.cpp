@@ -3,47 +3,45 @@ using namespace std;
 
 int dp[1005][1005];
 
-int solve(int n, int s, int a[])
+int knapsack_count(int n, int coin[], int s)
 {
     if(n == 0 || s == 0)
     {
         if(s == 0) return 1;
-        return 0;
+        else return 0;
     }
 
     if(dp[n][s] != -1) return dp[n][s];
 
-    if(a[n - 1] <= s)
+    if(coin[n - 1] <= s)
     {
-        int op1 = solve(n - 1, s - a[n - 1], a);
-        int op2 = solve(n - 1, s, a);
+        int op1 = knapsack_count(n, coin, s - coin[n - 1]);
+        int op2 = knapsack_count(n - 1, coin, s);
 
         return dp[n][s] = op1 + op2;
     }
 
-    return dp[n][s] = solve(n - 1, s, a);
+    else
+    {
+        return dp[n][s] = knapsack_count(n - 1, coin, s);
+    }
 }
 
 int main()
 {
     int n;
+    
     cin >> n;
 
-    int a[n];
-    int s = 0;
+    int coin[n];
 
     for(int i = 0; i < n; i++)
     {
-        cin >> a[i];
-        s += a[i];
+        cin >> coin[i];
     }
 
-    int diff;
-    cin >> diff;
-
-    int s1 = (diff + s) / 2;
-
-    cout << s1 << endl;
+    int s;
+    cin >> s;
 
     for(int i = 0; i <= n; i++)
     {
@@ -53,5 +51,5 @@ int main()
         }
     }
 
-    cout << solve(n, s1, a);
+    cout << knapsack_count(n, coin, s);
 }
